@@ -9,9 +9,18 @@ interface MenuState {
   error: string | null;
 }
 
+const defaultCategories: Category[] = [
+  { id: uuidv4(), name: "Appetizers" },
+  { id: uuidv4(), name: "Main Course" },
+  { id: uuidv4(), name: "Desserts" },
+  { id: uuidv4(), name: "Beverages" },
+  { id: uuidv4(), name: "Soups" },
+  { id: uuidv4(), name: "Salads" },
+];
+
 const initialState: MenuState = {
   items: JSON.parse(localStorage.getItem("menuItems") || "[]"),
-  categories: JSON.parse(localStorage.getItem("categories") || "[]"),
+  categories: JSON.parse(localStorage.getItem("categories") || JSON.stringify(defaultCategories)),
   loading: false,
   error: null,
 };

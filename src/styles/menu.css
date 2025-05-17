@@ -1,0 +1,42 @@
+.menu-table {
+  margin-top: 24px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.menu-form {
+  .ant-form-item {
+    margin-bottom: 24px;
+  }
+
+  .ant-input,
+  .ant-input-number,
+  .ant-select-selector {
+    border-radius: 6px;
+  }
+}
+
+.image-gallery {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.menu-item-image {
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .menu-table {
+    .ant-table {
+      overflow-x: auto;
+    }
+  }
+
+  .image-gallery {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}

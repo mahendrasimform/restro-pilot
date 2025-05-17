@@ -1,8 +1,10 @@
 import React from "react";
-import { Form, Input, Button, message } from "antd";
+import { Form, Input, Button, message, Card } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "src/store";
 import { login } from "src/store/features/authSlice";
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import '../styles/login.css';
 
 interface LoginForm {
   email: string;
@@ -14,44 +16,61 @@ export default function Login() {
   const navigate = useNavigate();
 
   const onFinish = (values: LoginForm) => {
-    dispatch(login(values));
-    message.success("Login successful!");
-    navigate("/");
+    if (values.email === "admin@restro.com" && values.password === "admin@1234") {
+      dispatch(login(values));
+      message.success("Login successful!");
+      navigate("/");
+    } else {
+      message.error("Invalid credentials!");
+    }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-6 text-center">Restaurant Admin Login</h1>
+    <div className="login-container">
+      <Card className="login-card">
+        <h1 className="login-title">Restaurant Admin</h1>
         <Form
           name="login"
           initialValues={{ remember: true }}
           onFinish={onFinish}
           layout="vertical"
+          className="login-form"
         >
           <Form.Item
-            label="Email"
             name="email"
-            rules={[{ required: true, message: "Please input your email!" }]}
+            rules={[
+              { required: true, message: "Please input your email!" },
+              { type: "email", message: "Please enter a valid email!" }
+            ]}
           >
-            <Input />
+            <Input 
+              prefix={<UserOutlined />} 
+              placeholder="Email"
+              size="large"
+            />
           </Form.Item>
 
           <Form.Item
-            label="Password"
             name="password"
-            rules={[{ required: true, message: "Please input your password!" }]}
+            rules={[
+              { required: true, message: "Please input your password!" },
+              { min: 6, message: "Password must be at least 6 characters!" }
+            ]}
           >
-            <Input.Password />
+            <Input.Password
+              prefix={<LockOutlined />}
+              placeholder="Password"
+              size="large"
+            />
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="w-full">
+            <Button type="primary" htmlType="submit" size="large" block>
               Log in
             </Button>
           </Form.Item>
         </Form>
-      </div>
+      </Card>
     </div>
   );
 }

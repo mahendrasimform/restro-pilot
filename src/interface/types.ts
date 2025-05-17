@@ -22,8 +22,10 @@ export interface MenuItem {
   description: string;
   price: number;
   category: string;
-  imageUrl: string;
+  images: string[];
+  ingredients: string[];
   available: boolean;
+  createdAt: string;
 }
 
 export interface Category {
@@ -37,4 +39,18 @@ export interface AuthState {
     email: string;
     role: string;
   } | null;
+}
+
+export interface MenuItemTableProps {
+  items: MenuItem[];
+  onEdit: (item: MenuItem) => void;
+  onDelete: (id: string) => void;
+}
+
+export interface MenuItemFormProps {
+  visible: boolean;
+  onCancel: () => void;
+  onSubmit: (values: Partial<MenuItem>) => void;
+  initialValues?: MenuItem;
+  categories: Category[];
 }
