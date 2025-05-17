@@ -1,0 +1,7 @@
+.vercel
+dist
+node_modules
+.scannerwork
+
+# Sentry Config File
+.env.sentry-build-plugin
