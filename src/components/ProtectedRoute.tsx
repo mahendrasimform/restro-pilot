@@ -1,12 +1,13 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { useAppSelector } from "src/store";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  const isAuthenticated = true; // Replace with actual authentication logic
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
