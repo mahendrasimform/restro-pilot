@@ -12,6 +12,9 @@
     "lint:fix": "eslint . --ext ts,tsx --fix"
   },
   "dependencies": {
+    "@sentry/react": "^9.24.0",
+    "@sentry/vite-plugin": "^3.5.0",
+    "@types/node": "^22.15.29",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "uuid": "^10.0.0"

@@ -2,6 +2,7 @@
 dist
 node_modules
 .scannerwork
+.env
 
 # Sentry Config File
 .env.sentry-build-plugin
