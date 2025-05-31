@@ -23,14 +23,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <Provider store={store}>
       <ConfigProvider theme={theme}>
         <App />
-        <button
-          onClick={() => {
-            throw new Error("This is your first error!");
-          }}
-        >
-          Break the world
-        </button>
-        ;
       </ConfigProvider>
     </Provider>
   </React.StrictMode>
