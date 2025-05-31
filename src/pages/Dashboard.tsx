@@ -2,7 +2,6 @@ import React from "react";
 import { Card, Row, Col, Statistic, Table } from "antd";
 import { useAppSelector } from "src/store";
 import { ShopOutlined, CheckCircleOutlined, AppstoreOutlined } from '@ant-design/icons';
-import { MenuItem } from "src/interface/types";
 
 const Dashboard: React.FC = () => {
   const { items, categories } = useAppSelector((state) => state.menu);

@@ -99,7 +99,7 @@ const MenuItemTable: React.FC<MenuItemTableProps> = ({ items, onEdit, onDelete }
 
   return (
     <Table
-      columns={columns}
+      columns={columns as any}
       dataSource={items}
       rowKey="id"
       className="menu-table"

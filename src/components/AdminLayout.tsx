@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu, Button, theme } from "antd";
+import { Layout, Menu, Button } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "src/store";
 import { logout } from "src/store/features/authSlice";
@@ -11,7 +11,6 @@ const { Header, Content, Sider } = Layout;
 const AdminLayout: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { token } = theme.useToken();
 
   const handleLogout = () => {
     dispatch(logout());
