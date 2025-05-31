@@ -1,0 +1,73 @@
+/* Admin Layout Styles */
+.admin-layout {
+  min-height: 100vh;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: #001529;
+}
+
+.admin-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.admin-content {
+  padding: 24px;
+  background: #f0f2f5;
+  min-height: calc(100vh - 64px);
+}
+
+.admin-sider {
+  box-shadow: 2px 0 8px 0 rgba(29,35,41,.05);
+}
+
+/* Dashboard Styles */
+.dashboard-stats {
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Menu Items Page Styles */
+.menu-items-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.menu-items-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.menu-table {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.form-input {
+  border-radius: 6px;
+}
+
+.form-button {
+  border-radius: 6px;
+  height: 40px;
+}
